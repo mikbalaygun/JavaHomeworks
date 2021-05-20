@@ -2,13 +2,19 @@ package hmw3_2;
 
 public class InstructorManager {
 	
-	public void giveHomework(Instructor instructor) {
-		System.out.println("ödev verildi. Eðitmen: "+instructor.getFirstName());
+	public void createInstructor(Instructor instructor) {
+		System.out.println(instructor.getId()+" id'li "+instructor.getFirstName()+", Eðitmen kaydýn oluþturuldu.");
+	}
+	
+	public void uptadeInstructor(Instructor instructor) {
+		if(instructor.getSigned()) {
+			System.out.println(instructor.getId()+" id'li eðitmen güncellendi.");
+		}else{
+			System.out.println("önce sisteme kayýt olmalýsýnýz.");
+		}
 		
 	}
 	
-	public void createCourse(Instructor instructor) {
-		System.out.println(instructor.getFirstName()+" Eðitmen kurs oluþturuldu.");
-	}
+	
 	
 }
