@@ -18,7 +18,7 @@ public class CustomerManager implements CustomerService {
 	public void add(Customer customer) {
 		
 		if(customerCheckService.checkIfRealPerson(customer)) {
-			System.out.println(customer.getFirstName()+" , musteri kaydin tamamlanmiþtir.iyi eglenceler!!");
+			System.out.println(customer.getFirstName()+" , musteri kaydin tamamlanmistir.iyi eglenceler!!");
 		}else {
 			System.out.println("not a valid person");
 		}
@@ -34,7 +34,7 @@ public class CustomerManager implements CustomerService {
 
 	@Override
 	public void update(Customer customer) {
-		System.out.println(customer.getFirstName()+" , guncelleme baþarili.");
+		System.out.println(customer.getFirstName()+" , guncelleme basarili.");
 		
 	}
 	
