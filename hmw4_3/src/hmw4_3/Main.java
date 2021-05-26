@@ -3,8 +3,11 @@ package hmw4_3;
 import java.time.LocalDate;
 
 import hmw4_3.Abstracts.CampaignService;
+import hmw4_3.Abstracts.CustomerCheckService;
 import hmw4_3.Abstracts.SaleService;
 import hmw4_3.Concretes.CampaignManager;
+import hmw4_3.Concretes.CustomerCheckManager;
+import hmw4_3.Concretes.CustomerManager;
 import hmw4_3.Concretes.SaleManager;
 import hmw4_3.Entities.Campaign;
 import hmw4_3.Entities.Customer;
@@ -35,9 +38,13 @@ public class Main {
 		
 		System.out.println("-----------------------------------------");
 		
+		CustomerCheckService customerCheckService = new CustomerCheckManager();
 		
+		CustomerManager customerManager = new CustomerManager(customerCheckService);
 		
-		
+		customerManager.add(customer1);
+		customerManager.add(customer2);
+		customerManager.delete(customer2);
 		
 		
 	}

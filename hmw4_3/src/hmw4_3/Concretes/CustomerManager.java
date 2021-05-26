@@ -18,7 +18,7 @@ public class CustomerManager implements CustomerService {
 	public void add(Customer customer) {
 		
 		if(customerCheckService.checkIfRealPerson(customer)) {
-			System.out.println(customer.getFirstName()+" , müþteri kaydýn tamamlanmýþtýr.Ýyi eglenceler!!");
+			System.out.println(customer.getFirstName()+" , musteri kaydin tamamlanmiþtir.iyi eglenceler!!");
 		}else {
 			System.out.println("not a valid person");
 		}
@@ -28,13 +28,13 @@ public class CustomerManager implements CustomerService {
 
 	@Override
 	public void delete(Customer customer) {
-		System.out.println(customer.getFirstName()+" , müþteri kaydýn silinmiþtir.");
+		System.out.println(customer.getFirstName()+" , musteri kaydin silinmistir.");
 		
 	}
 
 	@Override
 	public void update(Customer customer) {
-		System.out.println(customer.getFirstName()+" , güncelleme baþarýlý.");
+		System.out.println(customer.getFirstName()+" , guncelleme baþarili.");
 		
 	}
 	
