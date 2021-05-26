@@ -23,20 +23,9 @@ public class Main {
 		
 		Game[] games = {game1,game2,game3};
 		
+		
 		Customer customer1 = new Customer(1,"Ahmet","Aydin",LocalDate.of(1993, 2, 12),"123456789100");
 		Customer customer2 = new Customer(2,"Mehmet","Gul",LocalDate.of(1985, 11, 23),"567891234500");
-		
-		
-		Campaign campaign1 = new Campaign(1,"SummerTime Campaign",20);
-		Campaign campaign2 = new Campaign(2,"SpringTime Campaign",18);
-		
-		CampaignService campaignManager = new CampaignManager();
-		
-		SaleService saleService = new SaleManager(campaign1, campaignManager);
-		
-		saleService.sale(customer1, games);
-		
-		System.out.println("-----------------------------------------");
 		
 		CustomerCheckService customerCheckService = new CustomerCheckManager();
 		
@@ -45,6 +34,22 @@ public class Main {
 		customerManager.add(customer1);
 		customerManager.add(customer2);
 		customerManager.delete(customer2);
+		
+		
+		System.out.println("-----------------------------------------");
+
+		
+		Campaign campaign1 = new Campaign(1,"SummerTime Campaign",20);
+		Campaign campaign2 = new Campaign(2,"SpringTime Campaign",18);
+		
+		CampaignService campaignManager = new CampaignManager();
+		
+		SaleService saleService = new SaleManager(campaign1, campaignManager);
+		
+		saleService.sale(customer2, games);
+		
+		System.out.println("-----------------------------------------");
+		
 		
 		
 	}
