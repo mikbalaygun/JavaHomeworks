@@ -34,7 +34,7 @@ public class SaleManager implements SaleService {
 		}else {
 			for(Game game:games) {
 				total += game.getPrice();
-				System.out.println(game.getName()+" adlý oyun: fiyati "+game.getPrice());
+				System.out.println(game.getName()+" adli oyun: fiyati "+game.getPrice());
 			}
 			System.out.println(customer.getFirstName()+" , toplam borcunuz: "+total);
 		}
