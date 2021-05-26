@@ -27,14 +27,14 @@ public class SaleManager implements SaleService {
 			this.campaignService.createCampaign(games, this.campaign);
 			for(Game game:games) {
 				total += game.getPrice();
-				System.out.println(game.getName()+" adlý oyun "+campaign.getCampaignName()+" adlý kampanya ile %"+campaign.getCampaignPercent()+" indirime ugramýþtýr");
+				System.out.println(game.getName()+" adli oyun "+campaign.getCampaignName()+" adli kampanya ile %"+campaign.getCampaignPercent()+" indirime ugramistir");
 				System.out.println(game.getName()+": "+game.getPrice());
 			}
 			System.out.println(customer.getFirstName()+" , toplam borcunuz: "+total);
 		}else {
 			for(Game game:games) {
 				total += game.getPrice();
-				System.out.println(game.getName()+" adlý oyun: fiyatý "+game.getPrice());
+				System.out.println(game.getName()+" adlý oyun: fiyati "+game.getPrice());
 			}
 			System.out.println(customer.getFirstName()+" , toplam borcunuz: "+total);
 		}

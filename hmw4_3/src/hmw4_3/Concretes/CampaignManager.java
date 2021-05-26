@@ -10,7 +10,7 @@ public class CampaignManager implements CampaignService {
 	public void createCampaign(Game[] games, Campaign campaign) {
 			for(Game game:games) {
 				game.setPrice(game.getPrice()-((game.getPrice()*campaign.getCampaignPercent())/100));
-				System.out.println(campaign.getId()+" id'li kampanya dahilinde oyunda %"+campaign.getCampaignPercent()+"'luk bir kampanya uygulanmýþtýr");
+				System.out.println(campaign.getId()+" id'li kampanya dahilinde oyunda %"+campaign.getCampaignPercent()+"'luk bir kampanya uygulanmistir");
 			}
 	}
 
