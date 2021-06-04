@@ -12,7 +12,7 @@ public class UserCheckManager implements UserCheckService {
 	private Boolean confirm;
 	
 	@Override
-	public Boolean checkEmail(User user) {
+	public boolean checkEmail(User user) {
 		
 		String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 		Pattern pattern = Pattern.compile(regex);
@@ -22,7 +22,7 @@ public class UserCheckManager implements UserCheckService {
 	}
 
 	@Override
-	public Boolean checkPassword(User user) {
+	public boolean checkPassword(User user) {
 		if(user.getPassword().length() < 6) {
 			System.out.println(user.getFirstName()+" , Sifre en az 6 karakterden olusmalidir.");
 			return false;
@@ -33,7 +33,7 @@ public class UserCheckManager implements UserCheckService {
 	
 
 	@Override
-	public Boolean checkName(User user) {
+	public boolean checkName(User user) {
 		if(user.getFirstName().length() < 2 || user.getLastName().length() < 2) {
 			System.out.println("Ad veya soyad en az 2 karakterden olusmalidir.");
 			return false;
@@ -44,7 +44,7 @@ public class UserCheckManager implements UserCheckService {
 	}
 
 	@Override
-	public Boolean checkEmails(User user, List<User> userDb) {
+	public boolean checkEmails(User user, List<User> userDb) {
 		
 		userDb.forEach((usr) -> {
 			if(user.getEmail() == usr.getEmail()) {
@@ -59,7 +59,7 @@ public class UserCheckManager implements UserCheckService {
 	}
 
 	@Override
-	public Boolean checkAllOfThem(User user,List<User> userDb) {
+	public boolean checkAllOfThem(User user,List<User> userDb) {
 		
 		if(this.checkEmail(user) && this.checkName(user) && this.checkPassword(user) && this.checkEmails(user, userDb)){
 			user.setIsValid(true);
